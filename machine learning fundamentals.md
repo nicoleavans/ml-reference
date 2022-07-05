@@ -9,7 +9,9 @@ For instance, if each example x in our collection represents a person, then the 
 could contain height, the second feature $x^{(1)}$
 could contain weight, etc. For all examples, the feature at position j always contains the same kind of information. 
 
-The label $y_i$ can be either an element belonging to a finite set of classes, or a real number, or a more complex structure (vector, matrix, tree, graph, etc). You can see a class as a category to which an example belongs. For instance, if your examples are emails and your problem is spam detection, then you have two classes $\{spam, not\_spam\}$.
+The label $y_i$ 
+can be either an element belonging to a finite set of classes, or a real number, or a more complex structure (vector, matrix, tree, graph, etc). You can see a class as a category to which an example belongs. For instance, if your examples are emails and your problem is spam detection, then you have two classes 
+$\{spam, not\_spam\}$.
 
 The goal of a supervised learning algorithm is to use the dataset to produce a model that takes a feature vector $x$ as input and outputs information deducing the label for this feature vector.
 ### How it Works
