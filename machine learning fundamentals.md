@@ -9,7 +9,7 @@ $x^{(j)}$
 For instance, if each example $x$ in our collection represents a person, then the first feature, 
 $x^{(1)}$ 
 could contain height, the second feature 
-$x^{(1)}$
+$x^{(2)}$
 could contain weight, etc. For all examples, the feature at position j always contains the same kind of information. 
 
 The label $y_i$ 
