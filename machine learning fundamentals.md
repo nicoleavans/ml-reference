@@ -4,23 +4,32 @@ In supervised learning, the dataset is a collection of labeled examples:
 
 $$\{(x_i,y_i)\}^N_{i=1} $$
 
-Each element $x_i$ among $N$ is called a feature vector, a vector in which each dimension contains a value that describes the example somehow. That value is called a feature and is denoted as $x^{(j)}$ 
-For instance, if each example x in our collection represents a person, then the first feature, $x^{(1)}$ 
-could contain height, the second feature $x^{(1)}$
+Each element $x_i$ among $N$ is called a feature vector, a vector in which each dimension contains a value that describes the example somehow. That value is called a feature and is denoted as 
+$x^{(j)}$ 
+For instance, if each example $x$ in our collection represents a person, then the first feature, 
+$x^{(1)}$ 
+could contain height, the second feature 
+$x^{(1)}$
 could contain weight, etc. For all examples, the feature at position j always contains the same kind of information. 
 
 The label $y_i$ 
 can be either an element belonging to a finite set of classes, or a real number, or a more complex structure (vector, matrix, tree, graph, etc). You can see a class as a category to which an example belongs. For instance, if your examples are emails and your problem is spam detection, then you have two classes 
-$\{spam, not\_spam\}$.
+$\{spam, not\\_spam\}$.
 
-The goal of a supervised learning algorithm is to use the dataset to produce a model that takes a feature vector $x$ as input and outputs information deducing the label for this feature vector.
+The goal of a supervised learning algorithm is to use the dataset to produce a model that takes a feature vector 
+$x$
+as input and outputs information deducing the label for this feature vector.
 ### How it Works
 This is the machine learning type most frequently used in practice.
 
 #### Gather Data  
 The data is a collection of pairs (input, output). Input could be anything (emails, pictures, measurements) Outputs are usually real numbers, or labels (spam, not_spam, cat, dog, etc). Sometimes outputs are vectors (coordinates of a rectangle around a person in a picture), sequences (adjective, adjective, noun), or have some other structure.
 
-In the email example, say you have 10,000 email messages each with a label of $spam$ or $not\_spam$. Now you have to convert each email into a feature vector.
+In the email example, say you have 10,000 email messages each with a label of 
+$spam$
+or 
+$not\\_spam$
+. Now you have to convert each email into a feature vector.
 
 One way to convert a text into a feature vector, called *bag of words*, is to take a dictionary (let's say it contains 20,000 words) and stipulate that in our feature vector:
 - the first feature is equal to $1$ if the email contains the word "a"; otherwise, this feature is $0$;
@@ -28,9 +37,19 @@ One way to convert a text into a feature vector, called *bag of words*, is to ta
 - ...
 - the feature at position 20,000 is equal to $1$ if the email contains the word "zulu"; otherwise, this feature is equal to $0$
 
-You repeat the above procedure for every email in our collection, which gives us 10,000 feature vectors(each having the dimensionality of 20,000) and a label ($spam$, $not\_spam$).
+You repeat the above procedure for every email in our collection, which gives us 10,000 feature vectors (each having the dimensionality of 20,000) and a label ($spam$, $not\\_spam$).
 
-Now you have machine-readable input data, but the output labels are still in the form of human-readable text. Some learning algorithms require transforming labels into numbers (or booleans, functionally). Here, $spam$ could be $1$ (positive label) and $not\_spam$ could be $0$ (negative label). Support Vector Machine (SVM) requires the numeric value of $+1$ and $-1$.
+Now you have machine-readable input data, but the output labels are still in the form of human-readable text. Some learning algorithms require transforming labels into numbers (or booleans, functionally). Here, $spam$ 
+could be 
+$1$ 
+(positive label) and 
+$not\\_spam$ 
+could be 
+$0$
+(negative label). Support Vector Machine (SVM) requires the numeric value of 
+$+1$ 
+and 
+$-1$.
 
 #### Apply the Learning Algorithm
 At this point, you have a dataset and a learning algorithm, so you are ready to apply the learning algorithm to the dataset to get the model.
@@ -43,7 +62,9 @@ where the expression $wx$ means:
 $$w^{(1)}x^{(1)}+w^{(2)}x^{(2)}+...+w^{(D)}x^{(D)}$$
 and $D$ is the number of dimensions of the feature vector $x$.
 
-Now, the predicted label for some input feature vector $x$ is given:
+Now, the predicted label for some input feature vector 
+$x$ 
+is given:
 
 $$y={\operatorname{sign}}(wx - b)$$
 
@@ -53,9 +74,20 @@ The goal of the learning algorithm - SVM in this case - is to leverage the datas
 
 $$f(x)={\operatorname{sign}}(w^*x - b^*)$$
 
-Therefore, to predict whether an email message is spam or not spam using an SVM model, you have to take the text of the message, convert it into a feature vector, then multiply this vector by $w$* , subtract $b$* and take the sign of the result. This will give us the prediction ($+1$ means $spam$, $-1$ means $not\_spam$).
+Therefore, to predict whether an email message is spam or not spam using an SVM model, you have to take the text of the message, convert it into a feature vector, then multiply this vector by $w$* , subtract $b$* and take the sign of the result. This will give us the prediction (
+$+1$
+means 
+$spam$
+, 
+$-1$
+means 
+$not\\_spam$
+).
 
-The machine finds $w$* and $b$* by solving an optimization problem. Machines are good at optimizing functions under constraints. We want to satisfy a few constraints: first, we want the model to predict the labels of our 10,000 examples correctly. 
+The machine finds 
+$w$*
+and 
+$b$* by solving an optimization problem. Machines are good at optimizing functions under constraints. We want to satisfy a few constraints: first, we want the model to predict the labels of our 10,000 examples correctly. 
 
 ## Semi-supervised Learning
 In semi-supervised learning, the dataset contains both labeled and unlabeled examples. Usually, there are much more unlabeled examples. The goal of a semi-supervised learning algorithm is the same as supervised. Additionally, there is the hope that using many unlabeled examples can help the learning algorithm to find a better model.
@@ -70,7 +102,9 @@ The goal of unsupervised learning algorithm is to create a model that takes a fe
 | ------------- | ------------- |
 | clustering  | returns the id of the cluster for each feature vector in the dataset  |
 | dimensionality reduction  | returns a feature vector that has fewer features than the input $x$ |
-| outlier detection | returns a real number that indicates how $x$ is different from a typical example in the dataset |
+| outlier detection | returns a real number that indicates how 
+$x$
+is different from a typical example in the dataset |
 ## Reinforcement
 Reinforcement learning is a subfield of machine learning where the machine exists in an environment and is capable of perceiving the state of that environment as a vector of features. The machine can execute actions in every state. Different actions bring different rewards and could also move the machine to another state of the environment. The goal of a reinforcement learning algorithm is to learn a policy.
 
