@@ -102,9 +102,7 @@ The goal of unsupervised learning algorithm is to create a model that takes a fe
 | ------------- | ------------- |
 | clustering  | returns the id of the cluster for each feature vector in the dataset  |
 | dimensionality reduction  | returns a feature vector that has fewer features than the input $x$ |
-| outlier detection | returns a real number that indicates how 
-$x$
-is different from a typical example in the dataset |
+| outlier detection | returns a real number that indicates how  $x$ is different from a typical example in the dataset |
 ## Reinforcement
 Reinforcement learning is a subfield of machine learning where the machine exists in an environment and is capable of perceiving the state of that environment as a vector of features. The machine can execute actions in every state. Different actions bring different rewards and could also move the machine to another state of the environment. The goal of a reinforcement learning algorithm is to learn a policy.
 
