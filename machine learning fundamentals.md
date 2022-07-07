@@ -4,7 +4,7 @@ In supervised learning, the dataset is a collection of labeled examples:
 
 $$\{(x_i,y_i)\}^N_{i=1} $$
 
-Each element $x_i$ among $N$ is called a feature vector, a vector in which each dimension contains a value that describes the example somehow. That value is called a feature and is denoted as 
+Each element $x_i$ among $N$ is called a **feature vector**, a vector in which each dimension contains a value that describes the example somehow. That value is called a feature and is denoted as 
 $x^{(j)}$ 
 For instance, if each example $x$ in our collection represents a person, then the first feature, 
 $x^{(1)}$ 
@@ -88,6 +88,41 @@ The machine finds
 $w$*
 and 
 $b$* by solving an optimization problem. Machines are good at optimizing functions under constraints. We want to satisfy a few constraints: first, we want the model to predict the labels of our 10,000 examples correctly. 
+
+Remember that each example $i=1, ..., 10000$ is given by the pair $(x_i, y_i)$.
+
+| | |
+| -- | -- |
+| $x_i$ | feature vector of example $i$ |
+| $y_i$ | label that takes values either $-1$ or $+1$ |
+
+So the constraints are:
+
+$wx_i - b \geq +1$ if $y_i = +1$
+
+$wx_i - b \leq -1$ if $y_i = -1$
+
+It is preferred that the hyperplane separates positive examples from negative ones with the largest **margin**. A margin is the distance between the closest examples of two classes, as defined by the decision boundary. A large margin contributes to a better **generalization**, how well the model will classify new examples in the future. To achieve that, we need to minimize the Euclidean norm of $w$ denoted by $||w||$ and given by
+$$
+\sqrt(\Sigma^D_{j=1}(w^{(j)})^2)
+$$
+So, the optimization problem that we want the machine to solve looks like this:
+
+*Minimize* $||w||$ *subject to* $y_i(wx_i-b) \geq 1$ for $i=1, ..., N$.
+
+More simply, $y_i(wx_i-b)\geq 1$
+
+The solution to this optimization, given by $w$* and $b$*, is called the **statistical model**, or just the model. The process of building the model is **training**. 
+
+#### The Decision Boundary
+
+Geometrically, the equations $wx-b=1$ and $wx-b=-1$ define two parallel hyperplanes, and the line given by $wx-b=0$ is the **decision boundary**. 
+
+The distance between two hyperplanes is given by $\frac{2}{||w||}$ , so the smaller the norm $||w||$, the larger the distance between these two hyperplanes.
+
+This version of the SVM algorithm builds a *linear model*: the decision boundary being a straight line, plane, or hyperplane. SVM can also incorporate **kernels** that can make the decision boundary arbitrarily non-linear. In some cases, it could be impossible to perfectly separate the two groups of points due to noise in the data, errors of labeling, or outliers. 
+
+Any classification learning algorithm that builds a model implicitly or explicitly creates a decision boundary. The decision boundary can be straight, curved, or it can have a complex form. The form of the decision boundary determines the accuracy of the model, ie, the ratio of examples whose labels are predicted correctly. 
 
 ## Semi-supervised Learning
 In semi-supervised learning, the dataset contains both labeled and unlabeled examples. Usually, there are much more unlabeled examples. The goal of a semi-supervised learning algorithm is the same as supervised. Additionally, there is the hope that using many unlabeled examples can help the learning algorithm to find a better model.
