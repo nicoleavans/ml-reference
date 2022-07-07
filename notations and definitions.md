@@ -9,9 +9,40 @@
 | matrix | a rectangular array of numbers arranged in rows and columns | bold capital letters, such as $\textbf{A}$ or $\textbf{W}$ | 
 | set | an unordered collection of unique elements. a set of numbers can be finite (represented as {1,3,18,23,235} or {$x_1$,$x_2$,$x_3$}) or infinite and include all values in some interval (represented as [$a$,$b$] for all values between a and b. if the set doesn't include the values a and b it is shown as ($a$,$b$))** | a calligraphic capital character like $\mathcal{S}$ |
 
-When an element $x$ belongs to a set $\mathcal{S}$, we write $x\in\mathcal{S}$. We can obtain a new set $\mathcal{S}_3$ as the **intersection** of two sets $\mathcal{S}_1$ and $\mathcal{S}_2$. In this case, we write $\mathcal{S}_3\leftarrow\mathcal{S}_1\cap\mathcal{S}_2$. For example, $\{1,3,5,8\}\cap\{1,8,4\}$ gives the new set $\{1,8\}$. An intersection consists of all numbers that are in both sets. 
+When an element 
+$x$
+belongs to a set 
+$\mathcal{S}$
+, we write 
+$x\in\mathcal{S}$
+. We can obtain a new set 
+$\mathcal{S}_3$
+as the **intersection** of two sets
+$\mathcal{S}_1$
+and 
+$\mathcal{S}_2$
+. In this case, we write 
+$\mathcal{S}_3\leftarrow\mathcal{S}_1\cap\mathcal{S}_2$
+. For example, 
+$\{1,3,5,8\}\cap\{1,8,4\}$
+gives the new set 
+$\{1,8\}$
+. An intersection consists of all numbers that are in both sets. 
 
-We can obtain a new set $\mathcal{S}_3$ as a  **union** of two sets $\mathcal{S}_1$ and $\mathcal{S}_2$. For example, $\{1,3,5,8\}\cup\{1,8,4\}$ gives the new set $\{1,3,4,5,8\}$. A union includes all numbers in sets $\mathcal{S}_1$ or $\mathcal{S}_2$.
+We can obtain a new set 
+$\mathcal{S}_3$
+as a  **union** of two sets 
+$\mathcal{S}_1$
+and 
+$\mathcal{S}_2$
+. For example, 
+$\{1,3,5,8\}\cup\{1,8,4\}$
+gives the new set 
+$\{1,3,4,5,8\}$
+. A union includes all numbers in sets 
+$\mathcal{S}_1$
+or 
+$\mathcal{S}_2$.
 
 ### Capital Sigma Notation
 
