@@ -209,3 +209,4 @@ contains all numbers from minus infinity to plus infinity.
 * [The Hundred-Page Machine Learning Book](https://themlbook.com/) by Andriy Burkov, 2019 
 * https://www.probabilitycourse.com/chapter1/1_2_2_set_operations.php
 * https://math.mit.edu/~dspivak/files/symbols-all.pdf
+* https://detexify.kirelabs.org/classify.html
