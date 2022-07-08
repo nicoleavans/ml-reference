@@ -212,7 +212,156 @@ A vector function, dented as
 $\bf{y} = \bf{f}(x)$ 
 is a function that returns a vector
 $\bf{y}$ 
+. It can have a vector or scalar argument.
+
+### Max and Arg Max
+Given of set of values
+$\mathcal{A} = \{a_1,a_2, ..., a_n\}$
+, the operator 
+$\max_{a\in\mathcal{A}}f(a)$
+returns the highest value
+$f(a)$
+for all elements in the set
+$\mathcal{A}$
+. Whereas the operator 
+$\argmax_{a\in\mathcal{A}}f(a)$
+returns the element of the set 
+$\mathcal{A}$
+that maximizes
+$f(a)$
 .
+
+Sometimes, when the set is implicit or infinite, we can write
+$\max_af(a)$
+or 
+$\argmax_af(a)$
+.
+
+Operators 
+$\min$
+and 
+$\argmin$
+function similarly.
+
+### Assignment Operator
+The expression
+$a\leftarrow f(x)$
+means that the variable
+$a$
+gets the new value: the result of 
+$f(x)$
+. We say that the variable 
+$a$
+gets assigned a new value. Similarly, 
+$\bf{a}$
+$\leftarrow [a_1,a_2]$
+means that the vector variable
+$\bf{a}$
+gets the two-dismensional vector value
+$[a_1,a_2]$
+.
+
+### Derivative and Gradient
+A **derivative** 
+$f^\prime$
+of a function
+$f$
+is a function or a value that describes how fast 
+$f$
+grows (or decreases). If the derivative is a constant value, like
+$5$
+or
+$-3$
+, then the function grows (or decreases) constantly at any point
+$x$
+of its domain. If the derivative
+$f^\prime$
+is a function, then the function
+$f$
+can grow at a different pace in different regions of its domain. If the derivative
+$f^\prime$
+is positive at some point
+$x$
+, then the function 
+$f$
+grows at this point. If the derivative of
+$f$
+is negative at some
+$x$
+, then the function decreases at this point. The derivative of 
+$0$
+at 
+$x$
+means that the function's slope at 
+$x$
+is horizontal.
+
+The process of finding a derivative is called **differentiation**.
+
+Derivatives for basic functions are known. For example, if
+$f(x) = x^2$
+, then
+$f^\prime(x) = 2x$
+; if 
+$f(x) = 2x$
+, then
+$f^\prime(x) = 2$
+; if
+$f(x) = 2$
+, then
+$f^\prime(x) = 0$
+(the derivative of any function
+$f(x) = c$
+, where
+$c$
+is a constant value, is zero).
+
+If the function we want to differentiate is not basic, we can find its derivative using the **chain rule**. For instance, if
+$F(x) = f(g(x))$
+, where
+$f$
+and
+$g$
+are some functions, then 
+$F^\prime (x)= f^\prime (g(x)g^\prime (x))$
+. For example, if 
+$F(x) = (5x+1)^2$
+, then 
+$g(x) = 5x+1$
+and
+$f(g(x)) = (g(x))^2$
+. By applying the chain rule, we find:
+
+$$F^\prime (x) = 2(5x+1)g^\prime (x) = 2(5x +1)5 = 50x+10$$
+
+**Gradient** is the generalization of derivative for functions that take several inputs (or one input in the form of a vector or some other complex structure). A gradient of a function  is a vector of **partial derivatives**. You can look at finding a partial derivative of a function as the processs of finding the derivative by focusing on one of the function's inputs and by considering all other inputs as constant values.
+
+For example, if our functino is defined as 
+$f([x^{(1)},x^{(2)}]) = ax^{(1)} + bx^{(2)} + c$
+, then the partial derivative of function
+$f$
+*with respect to*
+$x^{(1)}$
+, denoted as
+$\frac{\partial f}{\partial x^{(1)}}$
+is given by,
+
+$$
+\frac{\partial f}{\partial x^{(1)}} = a + 0 + 0 = a
+$$
+, where 
+$a$
+is the derivative of the function
+$ax^{(1)}$
+; the two zeroes are respectively derivatives of 
+$bx^{(2)}$
+and
+$c$
+, because
+$x^{(2)}$
+is considered constant when we compute the derivative with respect to 
+$x^{(1)}$
+, and the derivative of any constant is zero.
 
 ## Footnotes
 \* Note: A variable can have two or more indices such as 
