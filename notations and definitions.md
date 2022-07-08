@@ -224,7 +224,7 @@ $f(a)$
 for all elements in the set
 $\mathcal{A}$
 . Whereas the operator 
-$\argmax_{a\in\mathcal{A}}f(a)$
+${\mathrm{argmax}}(a)_{a\in\mathcal{A}}f(a)$
 returns the element of the set 
 $\mathcal{A}$
 that maximizes
@@ -234,13 +234,13 @@ $f(a)$
 Sometimes, when the set is implicit or infinite, we can write
 $\max_af(a)$
 or 
-$\argmax_af(a)$
+${\mathrm{argmax}}(a)$
 .
 
 Operators 
 $\min$
 and 
-$\argmin$
+${\mathrm{argmin}}$
 function similarly.
 
 ### Assignment Operator
@@ -316,7 +316,7 @@ $f(x) = c$
 $c$
 is a constant value, is zero).
 
-If the function we want to differentiate is not basic, we can find its derivative using the **chain rule**. For instance, if
+If the function we want to differentiate is not basic, we can find its derivative using the **chain rule**. (It is also possible to find partial derivatives with the chain rule.) For instance, if
 $F(x) = f(g(x))$
 , where
 $f$
@@ -362,6 +362,29 @@ $x^{(2)}$
 is considered constant when we compute the derivative with respect to 
 $x^{(1)}$
 , and the derivative of any constant is zero.
+
+Similarly, the partial derivative of function
+$f$
+with respect to 
+$x^{(2)}$
+, 
+$\frac{\partial f}{\partial x^{(2)}}$
+,
+is given by,
+
+$$
+\frac{\partial f}{\partial x^{(2)}} = 0 + b + 0 = b
+$$
+
+The gradient of function 
+$f$
+denoted as 
+$\triangledown f$
+is given by the vector
+
+$$
+[\frac{\partial f}{\partial x^{(1)}},\frac{\partial f}{\partial x^{(2)}}] 
+$$
 
 ## Footnotes
 \* Note: A variable can have two or more indices such as 
