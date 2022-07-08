@@ -372,9 +372,7 @@ $\frac{\partial f}{\partial x^{(2)}}$
 ,
 is given by,
 
-$$
-\frac{\partial f}{\partial x^{(2)}} = 0 + b + 0 = b
-$$
+$\frac{\partial f}{\partial x^{(2)}} = 0 + b + 0 = b$
 
 The gradient of function 
 $f$
