@@ -187,7 +187,32 @@ $f$
 $y=f(x)$
 The element $x$ is the argument or input of the function, and 
 $y$
-is the value of the function on the output. The symbol that is used for representing the input is the variable of the function.
+is the value of the function on the output. The symbol that is used for representing the input is the variable of the function. (Thus, x is the variable of the function 
+$f$
+. 
+
+We say that 
+$f(x)$
+has a **local minimum** at
+$x=c$
+if 
+$f(x) \geq f(c)$
+for every 
+$x$
+in some open interval around
+$x=c$
+.
+|     |     |
+| --- | --- |
+| interval | a set of real numbers with the property that any number that lies between two numbers in the set is also included in the set |
+| open interval | does not include its endpoint and is denoted using parentheses. ie $(0,1)$ means 'all numbers greater than $0$ and less than $1$|
+| global minimum | the minimal value among all the local minima |
+
+A vector function, dented as
+$\bf{y} = \bf{f}(x)$ 
+is a function that returns a vector
+$\bf{y}$ 
+.
 
 ## Footnotes
 \* Note: A variable can have two or more indices such as 
