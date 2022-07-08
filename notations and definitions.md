@@ -387,6 +387,81 @@ $$
 [ \frac{\partial f}{\partial x^{(1)}},\frac{\partial f}{\partial x^{(2)}} ] 
 $$
 
+### Random Variable
+
+a **random variable**, usually written as an italiic capital letter, like *X*, is a variable whose possible values are numerical outcomes of a random phenomenon. Examples include a coin toss, dice roll, or the height of the first stranger you see. There are two types of random variables, **discrete** and **continuous**.
+
+| | | 
+| -- | -- |
+| discrete random variable | takes on only a countable number of distinct values such as $red, yellow, blue$ or $ 1, 2, 3 $ | 
+| probability distribution | described by a list of probabilities associated with each of its possible values. this list of values is called **probability mass function** (pmf)*** |
+| continuous random variable (crv) | takes an infinite number of possible values in some interval, such as height, weight, or time. because the number of values of a continus random variable $X$ is infinite, the probability of any option is $0$. the probability distribution of a crv is described by a **probability density function** (pdf). the pdf is a function whose codomain is nonnegative and the area under the curve is equal to $1$ | 
+
+Let a discrete random variable *X* have
+$k$
+possible values 
+$\{x_i\}^k_{i = 1}$
+. The **expectation** of *X* denoted as 
+$\mathbb{E}[X]$
+is given by:
+
+$$
+\mathbb{E}[X] \stackrel{\text{\tiny def}}{=} \sum^k_{i=1} [x_i \cdot Pr(X=x_i)] 
+\newline = x_1 \cdot Pr(X = x_2) + ... + x_k \cdot Pr(X = x_k)
+$$
+
+where
+$Pr(X = x_i)$
+is the probability that *X* has the value 
+$x_i$
+accoding to the pmf. The expectation of a random variable is also called the **mean**, **average**, or **expected value** and is frequently denoted by the letter
+$\mu$
+. The expectation is one of the most important **statistics** of a random vairable.
+
+Another important statistic is the **standard deviation**, defined as:
+
+$$
+\sigma \stackrel{\text{\tiny def}}{=} \sqrt{\mathbb{E}[(X - \mu)^2]}
+$$
+
+**Variance**, denoted as
+$\sigma^2$
+or 
+$\def\var{{\textrm{var}}\,} \var (X)$
+is defined as:
+
+$$
+\sigma^2 = \mathbb{E}[(X- \mu)^2]
+$$
+
+For a discrete random variable, the standard deviation is given by:
+
+$$
+\sigma = \sqrt{PR(X = x_1)(x_1 - \mu)^2 + PR(X = x_2)(x_2 - \mu)^2 + ... +Pr(X = x_k)(x_k - \mu)^2}
+$$
+
+where 
+$\mu = \mathbb{E}[X]$
+. The expectation of a continuous random variable *X* is given by:
+
+$$
+\mathbb{E}[X] \stackrel{\text{\tiny def}}{=} \int_\mathbb{R} xf_{\normalsize\mathrm{x}}(x)dx
+$$
+
+where 
+$f_{\normalsize\mathrm{x}}$
+is the pdf of the variable *X* and
+$\int_\mathbb{R}$
+is the integral of function
+$xf_{\normalsize\mathrm{x}}$
+. Integral is an equivalent of the summation over all values of the function when the function has a continuous domain. It equals the area under the curve of the function. The property of the pdf that the area under its curve is 
+$1$
+mathematically means that
+$\sum_\mathbb{R} f_{\normalsize\mathrm{x}}(x)dx = 1 $
+. Most of the time we don't know
+$f_{\normalsize\mathrm{x}}$
+, but we can observe some values of *X*. In machine learning, we call these values **examples**, and the collection of these examples is called a **sample** or a **dataset**.
+
 ## Footnotes
 \* Note: A variable can have two or more indices such as 
 $x_i^{(j)}$
@@ -402,6 +477,11 @@ $l$.
 \*\* A special set denoted 
 $\mathbb{R}$
 contains all numbers from minus infinity to plus infinity.
+
+\*\*\* For example:
+$Pr(X = blue) = 0.25, Pr(X = red) = 0.3, Pr(x = yellow) = 0.45$
+The sum of probabilities equals 
+$1$.
 
 # Sources
 * [The Hundred-Page Machine Learning Book](https://themlbook.com/) by Andriy Burkov, 2019 
