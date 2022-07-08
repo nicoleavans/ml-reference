@@ -80,7 +80,9 @@ $$
 
 This means we create a new set $\mathcal{S}^\prime$ by putting into it $x^2$ such that $x$ is in $\mathcal{S}$, and $x$ is greater than 3.
 
-The cardinality operator $|\mathcal{S}|$ returns the number of elements in set $\mathcal{S}$.
+The cardinality operator 
+$|\mathcal{S}|$
+returns the number of elements in set $\mathcal{S}$.
 
 ### Operations on Vectors
 The sum of two vectors $\textbf{x} + \textbf{z}$ is defined as the vector:
@@ -336,7 +338,7 @@ $$F^\prime (x) = 2(5x+1)g^\prime (x) = 2(5x +1)5 = 50x+10$$
 
 **Gradient** is the generalization of derivative for functions that take several inputs (or one input in the form of a vector or some other complex structure). A gradient of a function  is a vector of **partial derivatives**. You can look at finding a partial derivative of a function as the processs of finding the derivative by focusing on one of the function's inputs and by considering all other inputs as constant values.
 
-For example, if our functino is defined as 
+For example, if our function is defined as 
 $f([x^{(1)},x^{(2)}]) = ax^{(1)} + bx^{(2)} + c$
 , then the partial derivative of function
 $f$
@@ -349,6 +351,7 @@ is given by,
 $$
 \frac{\partial f}{\partial x^{(1)}} = a + 0 + 0 = a
 $$
+
 , where 
 $a$
 is the derivative of the function
@@ -381,7 +384,7 @@ $\triangledown f$
 is given by the vector
 
 $$
-[\frac{\partial f}{\partial x^{(1)}},\frac{\partial f}{\partial x^{(2)}}] 
+[ \frac{\partial f}{\partial x^{(1)}},\frac{\partial f}{\partial x^{(2)}} ] 
 $$
 
 ## Footnotes
