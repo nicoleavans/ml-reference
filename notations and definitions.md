@@ -427,7 +427,7 @@ $$
 **Variance**, denoted as
 $\sigma^2$
 or 
-$\def\var{{\textrm{var}}\,} \var (X)$
+${\textrm{var}} (X)$
 is defined as:
 
 $$
