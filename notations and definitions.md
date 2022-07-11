@@ -462,6 +462,97 @@ $\sum_\mathbb{R} f_{\normalsize\mathrm{x}}(x)dx = 1 $
 $f_{\normalsize\mathrm{x}}$
 , but we can observe some values of *X*. In machine learning, we call these values **examples**, and the collection of these examples is called a **sample** or a **dataset**.
 
+### Unbiased Estimators
+Because
+$f(x)$
+is usually unknown, but we have a sample
+$S_\mathrm{x} = \{x_i\}^N_{i=1}$
+, we ofen content ourselves not with the true values of statistics of the probability distribution, such as expectation, but with their unbiased estimators.
+
+We say that:
+
+| if $\hat{\theta}(S_\mathrm{X})$ has the property: | $\mathbb{E}[\hat{\theta}(S_\mathrm{X})] = \theta$ |
+| --- | ---- |
+| $\hat{\theta}(S_\mathrm{X})$ | unbiased estimator of some statistic |
+| $\theta$ | statistic calculated using a sample |
+| $S_\mathrm{X}$ | sample drawn from an unknown probability distribution |
+| $\hat{\theta}$ | **sample statistic** obtained using a sample and not the real statistic that can be obtained only from knowing $f(x)$ ; the expectation is taken over all possible samples drawn |
+
+Intuitively, this meansthat if you can have an unlimited number of such samples as 
+$S_\mathrm{X}$
+, and you compute some unbiased estimator, such as
+$\hat{\mu}$
+, using each sample, then the average of all these
+$\hat{\mu}$
+equals the real statistic
+$\mu$
+that you would get computed on
+$\mathrm{X}$
+.
+
+It can be shown that an unbiased estimator of an unknown
+$\mathbb{E}[\mathrm{X}]$
+(given by the expectation of either a discrete random variable or continuous random variable) is given by the **sample mean**:
+$\frac{1}{N} \sum^N_{i=1}x_i$
+
+### Bayes' Rule
+The conditional probability 
+$Pr(X = x | Y= y)$
+is the probability of the random variable
+$X$
+to have a specific value
+$x$
+given that another random variable 
+$Y$
+has a specific value of
+$y$
+. The Bayes' Rule, or Bayes' Theorem, stipulates that:
+
+$$
+Pr(X = x | Y= y) = \frac{Pr(X = x | Y= y) | Pr(X = x)}{Pr(Y=y)}
+$$
+
+### Parameter Estimation
+Bayes' Rule comes in handy when we have a model of 
+$X$
+'s distribution, and this model
+$f_{\theta}$
+is a function that has some parameters in the form of a vector
+$\boldsymbol{\theta}$
+. An example of such a function could be the Gaussian function that has two parameters,
+$\mu$
+and
+$\sigma$
+, and is defined as\*\*\*\*:
+
+$$
+f_{\theta}(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+$$
+
+where 
+$\boldsymbol{\theta} \stackrel{\text{\tiny def}}{=} [\mu , \sigma]$
+and
+$\pi$
+is the constant 
+$3.14159...$
+.
+
+This function has all the properties of a pdf. Therefore, we can use it as a model of an unknown distribution of 
+$X$
+. We can update the values of the parameters in the vector 
+$\boldsymbol{\theta}$
+from the data using Baye's Rule:
+
+$$
+Pr(\theta = \hat{\theta} | X = x) \leftarrow \frac{Pr(X = x | \theta = \hat{\theta}) | 
+Pr(\theta = \hat{\theta})}{Pr(X=x)} = \frac{Pr(X = x | \theta = \hat{\theta})Pr(\theta = \hat{\theta})}{\sum_{\tilde{\theta}}Pr(X=x|\theta = \hat{\theta})Pr(\theta = \hat{\theta})}
+$$
+
+where
+$Pr(X=x | \theta = \hat{\theta}) \stackrel{\text{\tiny def}}{=} f_{\hat{\theta}}$
+.
+
+
 ## Footnotes
 \* Note: A variable can have two or more indices such as 
 $x_i^{(j)}$
@@ -482,6 +573,10 @@ contains all numbers from minus infinity to plus infinity.
 $Pr(X = blue) = 0.25, Pr(X = red) = 0.3, Pr(x = yellow) = 0.45$
 The sum of probabilities equals 
 $1$.
+
+\*\*\*\* Defines the pdf of one of the most frequently used in practice probability distributions, called **Gaussian distribution** or **normal distribution** and denoted as
+$\mathcal{N}(\mu , \sigma^2)$
+.
 
 # Sources
 * [The Hundred-Page Machine Learning Book](https://themlbook.com/) by Andriy Burkov, 2019 
