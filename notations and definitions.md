@@ -473,10 +473,10 @@ We say that:
 
 | if $\hat{\theta}(S_\mathrm{X})$ has the property: | $\mathbb{E}[\hat{\theta}(S_\mathrm{X})] = \theta$ |
 | --- | ---- |
-| $\hat{\theta}(S_\mathrm{X})$ | unbiased estimator of some statistic |
 | $\theta$ | statistic calculated using a sample |
 | $S_\mathrm{X}$ | sample drawn from an unknown probability distribution |
 | $\hat{\theta}$ | **sample statistic** obtained using a sample and not the real statistic that can be obtained only from knowing $f(x)$ ; the expectation is taken over all possible samples drawn |
+| $\hat{\theta}(S_\mathrm{X})$ | unbiased estimator of some statistic |
 
 Intuitively, this meansthat if you can have an unlimited number of such samples as 
 $S_\mathrm{X}$
