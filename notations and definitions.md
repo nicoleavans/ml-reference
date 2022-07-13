@@ -552,6 +552,79 @@ where
 $Pr(X=x | \theta = \hat{\theta}) \stackrel{\text{\tiny def}}{=} f_{\hat{\theta}}$
 .
 
+If we have a sample
+$\mathcal{S}$
+of 
+$\mathrm{X}$
+and the set of possible values for 
+$\boldsymbol{\theta}$
+is finite, we can estimate
+$Pr(\theta = \hat{\theta})$
+by applying Bayes' rule iteratively, one example
+$x\in \mathcal{S}$
+at a time. The initial value
+$Pr(\theta = \hat{\theta})$
+can be guessed such that 
+$\sum_{\hat{\theta}}Pr(\theta = \hat{\theta})=1$
+. This guess of the probabilities for different
+$\hat{\theta}$
+is called the **prior**.
+
+First, we compute
+$Pr(\theta = \hat{\theta}|X=x_1)$
+for all possible values
+$\hat{\theta}$
+. Then, before updating 
+$Pr(\theta = \hat{\theta}|X=x)$
+again, this time for
+$x=x_2\in \mathcal{S}$
+using the Bayes' Rule established above, we replace the prior
+$Pr(\theta = \hat{\theta})$
+by the new estimate
+$Pr(\theta = \hat{\theta})\leftarrow \frac{1}{N}\sum_{x\in \mathcal{S}} Pr(\theta = \hat{\theta}|X=x)$
+.
+
+The best value of the parameters
+$\boldsymbol{\theta}^*$
+given one example is obtained using the principle of **maximum a posteriori** (MAP):
+
+$$
+\boldsymbol{\theta}^* = \underset{\theta}{\mathrm{argmax}} \prod^N_{i=1}Pr(\theta = \hat{\theta}|X = x_1)
+$$
+
+If the set of possible values for 
+$\theta$
+isn't finite, then we need to optimize the above equation directly using a numerical optimization routine, such as a gradient descent. Usually, we optimize the natural logarithm of the right-hand side expression because the logarithm of a product becomes the sum of logarithms and it's easier for the machine to work with a sum than a product. (Multiplication of many numbers can give either a very small or very large result. Then, **numerical overflow** becomes an issue when the machine cannot store the numbers in memory.)
+
+### Parameters vs. Hyperparameters
+A hyperparameter is a property of a learning algorithm, ususally having a numerical value. That value influences the way the algorithm works. Hyperparameters aren't learned by the algorithm itself from the data. They have to be set by the data analyst before running the algorithm. 
+
+Parameters are variables that define the model learned by the learning algorithm. Parameters are directly modified by the learning algorithm based on the training data. The goal of learning is to find such values of parameters that make the model optimal.
+
+### Classification vs. Regression
+**Classification** is a problem of automatically assigning a **label** to an unlabeled example, like assigning emails the label spam.
+
+In machine learning, the classification problem is solved by a **classification learning algorithm** that takes a collection of labeled examples as inputs and produces a model that can take an unlabeled example as input and either directly output a label or a value that can be used to deduce the label by the analyst, such as a probability. 
+
+In a classification problem, a label is a member of  finite set of **classes**. If the size of the set of classes is two, it is binary classification (or binomial). Multiclass classification (or multinomial) deal with three or more classes. There's still one label per example, though.
+
+While some learning algorithms naturally allow for multinomials, others are by nature binomial. 
+
+**Regression** is a problem of predicting a real-valued label (often called a **target**) given an unlabeled example. Estimating house price valuation based on house features is a famous example.
+
+The regression problem is solved by a **regression learning algorithm** that takes a collection of labeled examples as inputs and produces a model as input and output a target.
+
+### Model-Based vs. Instance-Based Learning
+Most supervised learning algorithms are model-based, such as SVM. Model-based aglorithms use the training data to create a model that has parameters learned from the training data. In SVM, the two parameters we saw were
+$\bf{w}^*$
+and
+$b^*$
+. After the model was built, the training model can be discarded.
+
+Instance-based learning algorithms use the whole dataset as the model. One instance-based algorithm frequently used in practice is **k-Nearest Neighbors** (kNN). In classification, to predict a label for an input example the kNN algorithm looks at the close neighborhood of the input example in the space of feature vectors and outputs the label that is saw the most often in this close neighborhood.
+
+### Shallow vs. Deep Learning
+A **shallow learning** algorithm learns the parameters of the model directly from the features of the training examples. Most supervised learning algorithms are shallow. The exceptions are **neural network** learning algorithms, specifically those that build neural networks with more than one layer between input and output. Such neural networks are called **deep neural networks**. In deep neural network learning (or deep learning), most model parameters are learned not directly from the features of the training examples, but from the outputs of the preceding layers.
 
 ## Footnotes
 \* Note: A variable can have two or more indices such as 
@@ -570,7 +643,11 @@ $\mathbb{R}$
 contains all numbers from minus infinity to plus infinity.
 
 \*\*\* For example:
-$Pr(X = blue) = 0.25, Pr(X = red) = 0.3, Pr(x = yellow) = 0.45$
+
+$$
+Pr(X = blue) = 0.25, Pr(X = red) = 0.3, Pr(x = yellow) = 0.45
+$$
+
 The sum of probabilities equals 
 $1$.
 
