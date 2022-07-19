@@ -49,7 +49,9 @@ The form of the linear model is very similar to the form of the SVM model. The o
 
 Alternatively, the hyperplane in linear regression is chosen to be as close to all training examples as possible.
 
-![Linear Regression](https://i.imgur.com/WrOP1Dm.jpeg)
+<p align="center">
+<img src="https://i.imgur.com/WrOP1Dm.jpeg" width="600">
+</p>
 
 You can see why the latter requirement is essential by looking at the graph above. We can use this line to predict the value of the target
 $y_{new}$
@@ -109,7 +111,9 @@ People invent new learning algorithms for one of the two main reasons:
 
 One practical justification of the choice of the linear form of the model is that it's simple. Why use a complex model when you can use a simple one? Another consideration is that linear models rarely overfit. **Overfitting** is the property of a model such that the model predicts very well labels of the examples used during training but frequently makes errors when applied to examples that weren't seen by the learning algorithm during training. 
 
-![Overfitting](https://i.imgur.com/pWBV3Jq.png)
+<p align="center">
+<img src="https://i.imgur.com/pWBV3Jq.png" width="600">
+</p>
 
 This is an example of overfitting in regression. The data used to build the regression line is the same as in the previous figure, but this time, it is the polynomial regression with a polynomial of degree 
 $10$
