@@ -1,7 +1,7 @@
 # C++ Machine Learning
 
 ## Introduction
-Following this (tutorial)[https://www.section.io/engineering-education/an-introduction-to-machine-learning-using-c++/], we implement linear regression to predict integers:
+Following this [tutorial](https://www.section.io/engineering-education/an-introduction-to-machine-learning-using-c++/), we implement linear regression to predict integers:
 
 ```c++
 #include <iostream>
