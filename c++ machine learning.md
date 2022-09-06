@@ -46,6 +46,4 @@ int main(){
 
     return 0;
 }
-
-//source: https://www.section.io/engineering-education/an-introduction-to-machine-learning-using-c++/
 ```
